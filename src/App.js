@@ -1,11 +1,13 @@
 import React from 'react';
+import {CharForm} from './CharForm'
 
-class App extends React.Component{
-  render(){
-    return(
-      <h1>Hello world</h1>
-    )
-  }
+function App(){
+  return(
+    <div>
+      <h1>Welcome to DnD Generator</h1>
+      <CharForm />
+    </div>
+  )
 }
 
 export default App;
