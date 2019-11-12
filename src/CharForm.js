@@ -12,8 +12,47 @@ export class CharForm extends React.Component{
       int: 0,
       wis: 0,
       cha: 0,
+      background: '',
     }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
   }
+
+  handleChange(e){
+    const { target } = e
+    const { name } = target
+    this.setState({
+      [name]: target.value
+    })
+  }
+
+  handleSubmit(e){
+    e.preventDefault()
+    console.log("helloe")
+    const entries = Object.entries(this.state)
+    console.log(entries)
+    entries.map( x => {
+      console.log(x)
+      if(x[1] === 0 || x[1] === ""){
+        if(x[0] === 0){
+          this.setState({
+            // [x[0]]: getRandomNumber(0,20)
+          })
+        }else if(x[0] === "name"){
+          this.setState({
+            // [x[0]]: getRandoName()
+          })
+        }else if(x[0] === "background"){
+          this.setState({
+            // [x[0]]: getRandoBackground()
+          })
+        }
+      }
+      return x
+    })
+  }
+
+
   render(){
     return (
       <div>
@@ -21,7 +60,7 @@ export class CharForm extends React.Component{
         <form onSubmit={this.handleSubmit}>
           <label>
             Character name:
-            <input name="name"type="text" value={this.state.value} onChange={this.handleChange} />
+            <input name="name"type="text" value={this.state.name} onChange={this.handleChange} />
           </label>
           <label>
             Pick your race:
@@ -81,7 +120,6 @@ export class CharForm extends React.Component{
           </label>
           <label>
             CHA:
-            
             <input
               type="number"
               name="cha"
@@ -92,7 +130,7 @@ export class CharForm extends React.Component{
 
           <label>
             Background:
-            <textarea name="background" value={this.state.value} onChange={this.handleChange} />
+            <textarea name="background" value={this.state.background} onChange={this.handleChange} />
           </label>
           <input type="submit" value="Submit" />
         </form>
