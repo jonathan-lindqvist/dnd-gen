@@ -1,4 +1,5 @@
 import React from 'react'
+import {getRandomNumber, getRandomName, getRandomBackground} from './helpers/helpers'
 
 export class CharForm extends React.Component{
   constructor(props){
@@ -28,27 +29,25 @@ export class CharForm extends React.Component{
 
   handleSubmit(e){
     e.preventDefault()
-    console.log("helloe")
     const entries = Object.entries(this.state)
-    console.log(entries)
-    entries.map( x => {
-      console.log(x)
-      if(x[1] === 0 || x[1] === ""){
-        if(x[0] === 0){
+    entries.map( stateItem => {
+      if(stateItem[1] === 0 || stateItem[1] === ""){
+        if(stateItem[1] === 0){
+          console.log("changing number")
+          const newAttribute = {[stateItem[0]]: getRandomNumber(20)}
+          console.log(newAttribute)
+          this.setState(newAttribute)
+        }else if(stateItem[0] === "name" && stateItem[1] === ""){
           this.setState({
-            // [x[0]]: getRandomNumber(0,20)
+            [stateItem[0]]: getRandomName()
           })
-        }else if(x[0] === "name"){
+        }else if(stateItem[0] === "background" && stateItem[1] === ""){
           this.setState({
-            // [x[0]]: getRandoName()
-          })
-        }else if(x[0] === "background"){
-          this.setState({
-            // [x[0]]: getRandoBackground()
+            [stateItem[0]]: getRandomBackground()
           })
         }
       }
-      return x
+      return stateItem
     })
   }
 
