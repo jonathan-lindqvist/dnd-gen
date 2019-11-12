@@ -17,9 +17,10 @@ export class CharForm extends React.Component{
   render(){
     return (
       <div>
+        <p>(Leaving stuff blank will generate it for you)</p>
         <form onSubmit={this.handleSubmit}>
           <label>
-            Enter character name (leaving it blank will generate one):
+            Character name:
             <input name="name"type="text" value={this.state.value} onChange={this.handleChange} />
           </label>
           <label>
@@ -34,9 +35,64 @@ export class CharForm extends React.Component{
           </label>
 
           <label>
+            STR:
+            <input
+              type="number"
+              name="str"
+              value={this.state.str}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>
+            DEX:
+            <input
+              type="number"
+              name="dex"
+              value={this.state.dex}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>
+            CON:
+            <input
+              type="number"
+              name="con"
+              value={this.state.con}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>
+            INT:
+            <input
+              type="number"
+              name="int"
+              value={this.state.int}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>
+            WIS:
+            <input
+              type="number"
+              name="wis"
+              value={this.state.wis}
+              onChange={this.handleChange}
+            />
+          </label>
+          <label>
+            CHA:
+            
+            <input
+              type="number"
+              name="cha"
+              value={this.state.cha}
+              onChange={this.handleChange}
+            />
+          </label>
+
+          <label>
             Background:
             <textarea name="background" value={this.state.value} onChange={this.handleChange} />
-            (Leaving it blank will generate one)
           </label>
           <input type="submit" value="Submit" />
         </form>
