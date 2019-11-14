@@ -1,5 +1,6 @@
 import React from 'react'
 import {getRandomNumber, getRandomName, getRandomBackground} from './helpers/helpers'
+import { StatField } from './StatField'
 
 export class CharForm extends React.Component{
   constructor(props){
@@ -19,11 +20,9 @@ export class CharForm extends React.Component{
     this.handleSubmit = this.handleSubmit.bind(this)
   }
 
-  handleChange(e){
-    const { target } = e
-    const { name } = target
+  handleChange(name,newValue){
     this.setState({
-      [name]: target.value
+      [name]: newValue
     })
   }
 
@@ -33,9 +32,7 @@ export class CharForm extends React.Component{
     entries.map( stateItem => {
       if(stateItem[1] === 0 || stateItem[1] === ""){
         if(stateItem[1] === 0){
-          console.log("changing number")
           const newAttribute = {[stateItem[0]]: getRandomNumber(20)}
-          console.log(newAttribute)
           this.setState(newAttribute)
         }else if(stateItem[0] === "name" && stateItem[1] === ""){
           this.setState({
@@ -50,7 +47,6 @@ export class CharForm extends React.Component{
       return stateItem
     })
   }
-
 
   render(){
     return (
@@ -72,60 +68,12 @@ export class CharForm extends React.Component{
             </select>
           </label>
 
-          <label>
-            STR:
-            <input
-              type="number"
-              name="str"
-              value={this.state.str}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            DEX:
-            <input
-              type="number"
-              name="dex"
-              value={this.state.dex}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            CON:
-            <input
-              type="number"
-              name="con"
-              value={this.state.con}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            INT:
-            <input
-              type="number"
-              name="int"
-              value={this.state.int}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            WIS:
-            <input
-              type="number"
-              name="wis"
-              value={this.state.wis}
-              onChange={this.handleChange}
-            />
-          </label>
-          <label>
-            CHA:
-            <input
-              type="number"
-              name="cha"
-              value={this.state.cha}
-              onChange={this.handleChange}
-            />
-          </label>
+          <StatField name="str" value={this.state.str} onChange={this.handleChange}/>
+          <StatField name="dex" value={this.state.dex} onChange={this.handleChange}/>
+          <StatField name="con" value={this.state.con} onChange={this.handleChange}/>
+          <StatField name="int" value={this.state.int} onChange={this.handleChange}/>
+          <StatField name="wis" value={this.state.wis} onChange={this.handleChange}/>
+          <StatField name="cha" value={this.state.cha} onChange={this.handleChange}/>
 
           <label>
             Background:
