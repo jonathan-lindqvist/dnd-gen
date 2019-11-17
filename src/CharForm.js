@@ -1,6 +1,9 @@
 import React from 'react'
 import {getRandomNumber, getRandomName, getRandomBackground} from './helpers/helpers'
 import { StatField } from './StatField'
+import { TextField } from './TextField'
+import { SelectField } from './SelectField'
+import { TextareaField } from './TextareaField'
 
 export class CharForm extends React.Component{
   constructor(props){
@@ -53,20 +56,9 @@ export class CharForm extends React.Component{
       <div>
         <p>(Leaving stuff blank will generate it for you)</p>
         <form onSubmit={this.handleSubmit}>
-          <label>
-            Character name:
-            <input name="name"type="text" value={this.state.name} onChange={this.handleChange} />
-          </label>
-          <label>
-            Pick your race:
-            <select name="race" value={this.state.race} onChange={this.handleChange}>
-              <option value="human">Human</option>
-              <option value="orc">Orc</option>
-              <option value="duck">Duck</option>
-              <option value="elf">elf</option>
-              <option value="dwarf">dwarf</option>
-            </select>
-          </label>
+          <TextField text="Character name" name="name" value={this.state.name} onChange={this.handleChange}/>
+
+          <SelectField text="Pick your race" name="race" value={this.state.race} options={["human", "orc", "duck", "elf", "dwarf"]} onChange={this.handleChange}/>
 
           <StatField name="str" value={this.state.str} onChange={this.handleChange}/>
           <StatField name="dex" value={this.state.dex} onChange={this.handleChange}/>
@@ -75,10 +67,7 @@ export class CharForm extends React.Component{
           <StatField name="wis" value={this.state.wis} onChange={this.handleChange}/>
           <StatField name="cha" value={this.state.cha} onChange={this.handleChange}/>
 
-          <label>
-            Background:
-            <textarea name="background" value={this.state.background} onChange={this.handleChange} />
-          </label>
+          <TextareaField text="Background" name="background" value={this.state.background} onChange={this.handleChange}/>
           <input type="submit" value="Submit" />
         </form>
       </div>

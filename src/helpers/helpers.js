@@ -15,3 +15,7 @@ export const getRandomName = () => {
   const randomIndex = getRandomNumber(names.length - 1)
   return names[randomIndex]
 }
+
+export const capitalize = str => {
+  return str.charAt(0).toUpperCase() + str.slice(1);
+  }
