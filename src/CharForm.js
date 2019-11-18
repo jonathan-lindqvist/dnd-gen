@@ -1,5 +1,5 @@
 import React from 'react'
-import {getRandomNumber, getRandomName, getRandomBackground} from './helpers/helpers'
+import {getRandomNumber, getRandomName, getRandomBackground, countObjects} from './helpers/helpers'
 import { StatField } from './StatField'
 import { TextField } from './TextField'
 import { SelectField } from './SelectField'
@@ -68,7 +68,7 @@ export class CharForm extends React.Component{
           <StatField name="cha" value={this.state.cha} onChange={this.handleChange}/>
 
           <TextareaField text="Background" name="background" value={this.state.background} onChange={this.handleChange}/>
-          <input type="submit" value="Submit" />
+          <input type="submit" value={countObjects(this.state, 8) ? "Randomize & Submit" : "Submit"} />
         </form>
       </div>
     )

@@ -18,4 +18,21 @@ export const getRandomName = () => {
 
 export const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1);
+}
+
+export const countObjects = (object, threshold) => {
+  const entries = Object.entries(object)
+  let counter = 0
+  entries.map( item => {
+    if (item[1]) {
+      counter += 1
+    }
+    return item
+  })
+
+  if(counter > threshold){
+    return false
+  }else{
+    return true
   }
+}
