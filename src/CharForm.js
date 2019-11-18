@@ -1,9 +1,10 @@
 import React from 'react'
-import {getRandomNumber, getRandomName, getRandomBackground, countObjects} from './helpers/helpers'
+import {getRandomNumber, getRandomName, getRandomBackground, countObjects, getRandomRace} from './helpers/helpers'
 import { StatField } from './StatField'
 import { TextField } from './TextField'
 import { SelectField } from './SelectField'
 import { TextareaField } from './TextareaField'
+import { Redirect } from 'react-router-dom'
 
 export class CharForm extends React.Component{
   constructor(props){
@@ -18,6 +19,7 @@ export class CharForm extends React.Component{
       wis: 0,
       cha: 0,
       background: '',
+      redirect: false,
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -45,13 +47,26 @@ export class CharForm extends React.Component{
           this.setState({
             [stateItem[0]]: getRandomBackground()
           })
+        }else if(stateItem[0] === "race" && stateItem[1] === ""){
+          this.setState({
+            [stateItem[0]]: getRandomRace()
+          })
         }
       }
       return stateItem
     })
+    this.setState({
+      redirect: true
+    })
   }
 
   render(){
+    if (this.state.redirect) {
+      return <Redirect to={{
+        pathname: '/pdf',
+        state: this.state,
+    }}/>;
+    }
     return (
       <div>
         <p>(Leaving stuff blank will generate it for you)</p>

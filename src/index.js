@@ -4,6 +4,7 @@ import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './index.css';
 import App from './App';
 import NotFound from './NotFound'
+import { Pdf } from './Pdf';
 
 
 
@@ -12,6 +13,7 @@ const routing = (
     <div>
       <Switch>
         <Route exact path="/" component={App} />
+        <Route exact path="/pdf" component={Pdf} />
         <Route component={NotFound} />
       </Switch>
     </div>

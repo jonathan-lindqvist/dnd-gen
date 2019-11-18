@@ -16,6 +16,14 @@ export const getRandomName = () => {
   return names[randomIndex]
 }
 
+// refactor
+const races = ["human", "orc", "duck", "elf", "dwarf"]
+
+export const getRandomRace = () => {
+  const randomIndex = getRandomNumber(races.length - 1)
+  return races[randomIndex]
+}
+
 export const capitalize = str => {
   return str.charAt(0).toUpperCase() + str.slice(1);
 }
