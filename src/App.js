@@ -3,8 +3,8 @@ import {CharForm} from './CharForm'
 
 function App(){
   return(
-    <div>
-      <h1>Welcome to DnD Generator</h1>
+    <div className="width100">
+      <h1 className="flex-center">Welcome to DnD Generator</h1>
       <CharForm />
     </div>
   )

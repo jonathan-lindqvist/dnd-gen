@@ -10,7 +10,7 @@ import { Pdf } from './Pdf';
 
 const routing = (
   <Router>
-    <div>
+    <div className="width100">
       <Switch>
         <Route exact path="/" component={App} />
         <Route exact path="/pdf" component={Pdf} />

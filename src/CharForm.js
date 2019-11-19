@@ -68,9 +68,9 @@ export class CharForm extends React.Component{
     }}/>;
     }
     return (
-      <div>
-        <p>(Leaving stuff blank will generate it for you)</p>
-        <form onSubmit={this.handleSubmit}>
+      <div className="flex-center column align-items-center">
+        <p className="tip">(Leaving stuff blank will generate it for you)</p>
+        <form className="flex-center column" onSubmit={this.handleSubmit}>
           <TextField text="Character name" name="name" value={this.state.name} onChange={this.handleChange}/>
 
           <SelectField text="Pick your race" name="race" value={this.state.race} options={["human", "orc", "duck", "elf", "dwarf"]} onChange={this.handleChange}/>
