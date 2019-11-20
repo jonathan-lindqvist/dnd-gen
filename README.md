@@ -5,3 +5,5 @@ After the form is filled out or generated the user will be presented with a pdf 
 
 ## [TODO](https://github.com/jonathan-lindqvist/dnd-gen/issues)
 
+## [GH page](https://jonathan-lindqvist.github.io/dnd-gen/)
+(home route is /dnd-gen becasue of gh pages)
