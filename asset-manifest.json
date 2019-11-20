@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/dnd-gen/static/css/main.1d9a953c.chunk.css",
+    "main.css": "/dnd-gen/static/css/main.4beb269b.chunk.css",
     "main.js": "/dnd-gen/static/js/main.10a578cb.chunk.js",
     "main.js.map": "/dnd-gen/static/js/main.10a578cb.chunk.js.map",
     "runtime-main.js": "/dnd-gen/static/js/runtime-main.0da2c2fd.js",
@@ -8,14 +8,14 @@
     "static/js/2.bb4d9ef8.chunk.js": "/dnd-gen/static/js/2.bb4d9ef8.chunk.js",
     "static/js/2.bb4d9ef8.chunk.js.map": "/dnd-gen/static/js/2.bb4d9ef8.chunk.js.map",
     "index.html": "/dnd-gen/index.html",
-    "precache-manifest.6ccfe930766927012096a061745084d9.js": "/dnd-gen/precache-manifest.6ccfe930766927012096a061745084d9.js",
+    "precache-manifest.fcbb7a8f333977c5a20ce57a395c3f22.js": "/dnd-gen/precache-manifest.fcbb7a8f333977c5a20ce57a395c3f22.js",
     "service-worker.js": "/dnd-gen/service-worker.js",
-    "static/css/main.1d9a953c.chunk.css.map": "/dnd-gen/static/css/main.1d9a953c.chunk.css.map"
+    "static/css/main.4beb269b.chunk.css.map": "/dnd-gen/static/css/main.4beb269b.chunk.css.map"
   },
   "entrypoints": [
     "static/js/runtime-main.0da2c2fd.js",
     "static/js/2.bb4d9ef8.chunk.js",
-    "static/css/main.1d9a953c.chunk.css",
+    "static/css/main.4beb269b.chunk.css",
     "static/js/main.10a578cb.chunk.js"
   ]
 }
